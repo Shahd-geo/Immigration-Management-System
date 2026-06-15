@@ -45,7 +45,7 @@ public class VisaApplicationService {
                 .orElseThrow(() ->  ImmigrationException.notFound(ErrorMessages.OFFICER_NOT_FOUND));
         if (visaApplication.getVisaType().equalsIgnoreCase("Asylum")) {
             if (officer.getClearanceLevel() < 4  ) {
-                throw new RuntimeException("Asylum visas require clearance level 4 or 5");
+                throw ImmigrationException.badRequest(ErrorMessages.ASYLUM_CLEARANCE_REQUIRED);
             }
 
         }
@@ -56,10 +56,8 @@ public class VisaApplicationService {
     public VisaApplication processVisa(Long visaId, String newStatus, String notes){
 
         VisaApplication visaApplication = visaApplicationRepository.findById(visaId)
-                .orElseThrow(() -> new RuntimeException("Visa application not found"));
-
+                .orElseThrow(() -> ImmigrationException.notFound(ErrorMessages.VISA_NOT_FOUND));
         if (!newStatus.equalsIgnoreCase("APPROVED") && !newStatus.equalsIgnoreCase("REJECTED")) {
-
             throw new RuntimeException("Status must be APPROVED or REJECTED");
         }
         visaApplication.setStatus(newStatus);
