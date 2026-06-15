@@ -34,9 +34,9 @@ public class OfficerService {
 
     public ImmigrationOfficer transferOfficer(Long officerId, Long newCenterId) {
         ImmigrationOfficer officer = officerRepository.findById(officerId)
-                .orElseThrow(() -> new RuntimeException("Officer not found"));
+                .orElseThrow(() -> ImmigrationException.notFound(ErrorMessages.OFFICER_NOT_FOUND));
         ImmigrationCenter center = centerRepository.findById(newCenterId)
-                .orElseThrow(() -> new RuntimeException("Center not found"));
+                .orElseThrow(() -> ImmigrationException.notFound(ErrorMessages.CENTER_NOT_FOUND));
         officer.setCenter(center);
         return officerRepository.save(officer);
     }
