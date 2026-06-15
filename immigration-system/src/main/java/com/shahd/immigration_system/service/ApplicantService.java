@@ -48,7 +48,7 @@ public class ApplicantService {
                  applicantRepository.save(applicant);
         List<Interview> interviews = interviewRepository.findByApplicantId(applicantId);
         for (Interview interview : interviews) {
-            if (interview.getStatus().equals("SCHEDULED")) {
+            if (interview.getStatus().equalsIgnoreCase("SCHEDULED")) {
                 interview.setStatus("CANCELLED");
                 interviewRepository.save(interview);
             }
