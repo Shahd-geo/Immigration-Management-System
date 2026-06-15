@@ -52,4 +52,7 @@ public class VisaApplicationService {
 
         return visaApplicationRepository.save(visaApplication);
     }
+    public VisaApplication processVisa(Long visaId, String newStatus, String notes){
+
+    }
 }
