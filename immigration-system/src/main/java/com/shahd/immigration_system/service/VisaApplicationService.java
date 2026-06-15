@@ -40,7 +40,7 @@ public class VisaApplicationService {
     }
     public VisaApplication assignOfficer(Long visaId, Long officerId) {
         VisaApplication visaApplication = visaApplicationRepository.findById(visaId)
-                .orElseThrow(() -> new RuntimeException("Visa application not found"));
+                .orElseThrow(() -> ImmigrationException.notFound(ErrorMessages.VISA_NOT_FOUND));
         ImmigrationOfficer officer = officerRepository.findById(officerId)
                 .orElseThrow(() -> new RuntimeException("Officer not found"));
         if (visaApplication.getVisaType().equalsIgnoreCase("Asylum")) {
