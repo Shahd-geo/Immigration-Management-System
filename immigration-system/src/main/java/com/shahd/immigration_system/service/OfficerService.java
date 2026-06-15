@@ -7,6 +7,8 @@ import com.shahd.immigration_system.repository.OfficerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class OfficerService {
     @Autowired
@@ -34,5 +36,9 @@ public class OfficerService {
                 .orElseThrow(() -> new RuntimeException("Center not found"));
         officer.setCenter(center);
         return officerRepository.save(officer);
+    }
+
+    public List<ImmigrationOfficer> findOfficersByRank(String rank) {
+        return officerRepository.findByOfficerRank(rank);
     }
 }
