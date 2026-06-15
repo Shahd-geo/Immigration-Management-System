@@ -14,7 +14,6 @@ public class ApplicantDTO {
     private String lastName;
     private String passportNumber;
     private String nationality;
-    private boolean criminalRecord;
 
     public static ApplicantDTO convertToDTO(Applicant entity) {
         ApplicantDTO dto = new ApplicantDTO();
