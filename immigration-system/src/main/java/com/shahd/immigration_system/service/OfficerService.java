@@ -2,6 +2,8 @@ package com.shahd.immigration_system.service;
 
 import com.shahd.immigration_system.entity.ImmigrationCenter;
 import com.shahd.immigration_system.entity.ImmigrationOfficer;
+import com.shahd.immigration_system.exception.ErrorMessages;
+import com.shahd.immigration_system.exception.ImmigrationException;
 import com.shahd.immigration_system.repository.CenterRepository;
 import com.shahd.immigration_system.repository.OfficerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +22,7 @@ public class OfficerService {
 
     public ImmigrationOfficer promoteOfficer(Long officerId, String newRank, int newClearanceLevel){
         ImmigrationOfficer officer = officerRepository.findById(officerId)
-                .orElseThrow(() -> new RuntimeException("Officer not found"));
+                .orElseThrow(() -> ImmigrationException.notFound(ErrorMessages.OFFICER_NOT_FOUND));
         if (newClearanceLevel < 1 || newClearanceLevel > 5) {
             throw new RuntimeException("Clearance level must be between 1 and 5");
         }
