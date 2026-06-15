@@ -12,6 +12,11 @@ public class OfficerService {
 
 
     public ImmigrationOfficer promoteOfficer(Long officerId, String newRank, int newClearanceLevel){
+        ImmigrationOfficer officer = officerRepository.findById(officerId)
+                .orElseThrow(() -> new RuntimeException("Officer not found"));
+        if (newClearanceLevel < 1 || newClearanceLevel > 5) {
+            throw new RuntimeException("Clearance level must be between 1 and 5");
+        }
 
     }
 }
