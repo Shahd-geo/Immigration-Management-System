@@ -36,4 +36,7 @@ public class VisaApplicationService {
 
     }
     public VisaApplication assignOfficer(Long visaId, Long officerId) {
+        VisaApplication visaApplication = visaApplicationRepository.findById(visaId)
+                .orElseThrow(() -> new RuntimeException("Visa application not found"));
+    }
 }
