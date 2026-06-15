@@ -21,5 +21,16 @@ public class VisaApplicationService {
         VisaApplication visaApplication = new VisaApplication();
         visaApplication.setVisaType(visaType);
         visaApplication.setApplicant(applicant);
+        if (applicant.isCriminalRecord()) {
+            visaApplication.setOfficerNotes("Auto-rejected due to criminal flag.");
+            visaApplication.setStatus("REJECTED");
+
+        } else {
+
+            visaApplication.setStatus("PENDING");
+
+        }
+        return visaApplicationRepository.save(visaApplication);
+
     }
 }
