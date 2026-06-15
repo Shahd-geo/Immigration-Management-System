@@ -45,7 +45,7 @@ public class InterviewService {
     public Interview completeInterview(Long interviewId) {
 
         Interview interview = interviewRepository.findById(interviewId)
-                .orElseThrow(() -> new RuntimeException("Interview not found"));
+                .orElseThrow(() -> ImmigrationException.notFound(ErrorMessages.INTERVIEW_NOT_FOUND));
         interview.setStatus("COMPLETED");
         return interviewRepository.save(interview);
     }
