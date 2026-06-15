@@ -41,4 +41,8 @@ public class OfficerService {
     public List<ImmigrationOfficer> findOfficersByRank(String rank) {
         return officerRepository.findByOfficerRank(rank);
     }
+
+    public List<ImmigrationOfficer> findOfficersByRank(String rank, int minimumClearanceLevel){
+
+    }
 }
