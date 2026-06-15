@@ -1,5 +1,6 @@
 package com.shahd.immigration_system.service;
 
+import com.shahd.immigration_system.entity.Applicant;
 import com.shahd.immigration_system.entity.VisaApplication;
 import com.shahd.immigration_system.repository.ApplicantRepository;
 import com.shahd.immigration_system.repository.VisaApplicationRepository;
@@ -15,4 +16,7 @@ public class VisaApplicationService {
     private ApplicantRepository applicantRepository;
 
     public VisaApplication submitApplication(Long applicantId, String visaType) {
+        Applicant applicant = applicantRepository.findById(applicantId)
+                .orElseThrow(() -> new RuntimeException("Applicant not found"));
+    }
 }
