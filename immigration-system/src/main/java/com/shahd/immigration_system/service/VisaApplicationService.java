@@ -3,6 +3,8 @@ package com.shahd.immigration_system.service;
 import com.shahd.immigration_system.entity.Applicant;
 import com.shahd.immigration_system.entity.ImmigrationOfficer;
 import com.shahd.immigration_system.entity.VisaApplication;
+import com.shahd.immigration_system.exception.ErrorMessages;
+import com.shahd.immigration_system.exception.ImmigrationException;
 import com.shahd.immigration_system.repository.ApplicantRepository;
 import com.shahd.immigration_system.repository.OfficerRepository;
 import com.shahd.immigration_system.repository.VisaApplicationRepository;
@@ -20,7 +22,7 @@ public class VisaApplicationService {
 
     public VisaApplication submitApplication(Long applicantId, String visaType) {
         Applicant applicant = applicantRepository.findById(applicantId)
-                .orElseThrow(() -> new RuntimeException("Applicant not found"));
+                .orElseThrow(() -> ImmigrationException.notFound(ErrorMessages.APPLICANT_NOT_FOUND));
         VisaApplication visaApplication = new VisaApplication();
         visaApplication.setVisaType(visaType);
         visaApplication.setApplicant(applicant);
