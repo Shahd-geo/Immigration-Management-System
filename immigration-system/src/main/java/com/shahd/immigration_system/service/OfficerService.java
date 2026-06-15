@@ -17,6 +17,9 @@ public class OfficerService {
         if (newClearanceLevel < 1 || newClearanceLevel > 5) {
             throw new RuntimeException("Clearance level must be between 1 and 5");
         }
+        officer.setOfficerRank(newRank);
+        officer.setClearanceLevel(newClearanceLevel);
+        return officerRepository.save(officer);
 
     }
 }
