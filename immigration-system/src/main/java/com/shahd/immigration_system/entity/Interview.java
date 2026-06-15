@@ -12,14 +12,13 @@ import lombok.NoArgsConstructor;
 public class Interview {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ManyToOne
-    private Applicant applicant;
-    @ManyToOne
-    private ImmigrationOfficer officer;
-
     private Long id;
     private String interviewDate;
     private String status;
     private String purpose;
+    @ManyToOne
+    private Applicant applicant;
+    @ManyToOne
+    private ImmigrationOfficer officer;
 
 }
