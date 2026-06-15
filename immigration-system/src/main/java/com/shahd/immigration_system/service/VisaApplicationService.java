@@ -41,8 +41,15 @@ public class VisaApplicationService {
                 .orElseThrow(() -> new RuntimeException("Visa application not found"));
         ImmigrationOfficer officer = officerRepository.findById(officerId)
                 .orElseThrow(() -> new RuntimeException("Officer not found"));
-        if (visaApplication.getVisaType().equalsIgnoreCase("Asylum")){
+        if (visaApplication.getVisaType().equalsIgnoreCase("Asylum")) {
+
+            if (officer.getClearanceLevel() < 4  ) {
+                throw new RuntimeException("Asylum visas require clearance level 4 or 5");
+            }
 
         }
+        visaApplication.setHandlingOfficer(officer);
+
+        return visaApplicationRepository.save(visaApplication);
     }
 }
