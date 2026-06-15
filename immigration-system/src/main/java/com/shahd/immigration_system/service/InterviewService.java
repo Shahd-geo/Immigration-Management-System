@@ -1,5 +1,6 @@
 package com.shahd.immigration_system.service;
 
+import com.shahd.immigration_system.entity.Interview;
 import com.shahd.immigration_system.repository.ApplicantRepository;
 import com.shahd.immigration_system.repository.InterviewRepository;
 import com.shahd.immigration_system.repository.OfficerRepository;
@@ -16,4 +17,6 @@ public class InterviewService {
 
     @Autowired
     private OfficerRepository officerRepository;
+
+    public Interview scheduleInterview(Long applicantId, Long officerId, String date) {
 }
