@@ -16,9 +16,7 @@ public class Applicant extends Person{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String passportNumber;
-
     private String nationality;
-
     private boolean criminalRecord;
 
     @OneToMany
