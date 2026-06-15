@@ -44,7 +44,6 @@ public class VisaApplicationService {
         ImmigrationOfficer officer = officerRepository.findById(officerId)
                 .orElseThrow(() ->  ImmigrationException.notFound(ErrorMessages.OFFICER_NOT_FOUND));
         if (visaApplication.getVisaType().equalsIgnoreCase("Asylum")) {
-
             if (officer.getClearanceLevel() < 4  ) {
                 throw new RuntimeException("Asylum visas require clearance level 4 or 5");
             }
