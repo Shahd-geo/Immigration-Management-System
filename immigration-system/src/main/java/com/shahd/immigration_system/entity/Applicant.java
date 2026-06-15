@@ -1,12 +1,11 @@
 package com.shahd.immigration_system.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -21,4 +20,7 @@ public class Applicant extends Person{
     private String nationality;
 
     private boolean criminalRecord;
+
+    @OneToMany(mappedBy = "applicant")
+    private List<VisaApplication> visaApplications;
 }
