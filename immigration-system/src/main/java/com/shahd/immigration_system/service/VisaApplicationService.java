@@ -41,5 +41,8 @@ public class VisaApplicationService {
                 .orElseThrow(() -> new RuntimeException("Visa application not found"));
         ImmigrationOfficer officer = officerRepository.findById(officerId)
                 .orElseThrow(() -> new RuntimeException("Officer not found"));
+        if (visaApplication.getVisaType().equalsIgnoreCase("Asylum")){
+
+        }
     }
 }
