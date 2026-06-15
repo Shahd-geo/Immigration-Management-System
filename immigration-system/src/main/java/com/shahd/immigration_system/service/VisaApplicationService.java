@@ -1,6 +1,7 @@
 package com.shahd.immigration_system.service;
 
 import com.shahd.immigration_system.entity.Applicant;
+import com.shahd.immigration_system.entity.ImmigrationOfficer;
 import com.shahd.immigration_system.entity.VisaApplication;
 import com.shahd.immigration_system.repository.ApplicantRepository;
 import com.shahd.immigration_system.repository.OfficerRepository;
@@ -38,5 +39,7 @@ public class VisaApplicationService {
     public VisaApplication assignOfficer(Long visaId, Long officerId) {
         VisaApplication visaApplication = visaApplicationRepository.findById(visaId)
                 .orElseThrow(() -> new RuntimeException("Visa application not found"));
+        ImmigrationOfficer officer = officerRepository.findById(officerId)
+                .orElseThrow(() -> new RuntimeException("Officer not found"));
     }
 }
