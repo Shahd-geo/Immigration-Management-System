@@ -3,6 +3,7 @@ package com.shahd.immigration_system.service;
 import com.shahd.immigration_system.entity.Applicant;
 import com.shahd.immigration_system.entity.VisaApplication;
 import com.shahd.immigration_system.repository.ApplicantRepository;
+import com.shahd.immigration_system.repository.OfficerRepository;
 import com.shahd.immigration_system.repository.VisaApplicationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,9 +12,10 @@ import org.springframework.stereotype.Service;
 public class VisaApplicationService {
     @Autowired
     private VisaApplicationRepository visaApplicationRepository;
-
     @Autowired
     private ApplicantRepository applicantRepository;
+    @Autowired
+    private OfficerRepository officerRepository;
 
     public VisaApplication submitApplication(Long applicantId, String visaType) {
         Applicant applicant = applicantRepository.findById(applicantId)
