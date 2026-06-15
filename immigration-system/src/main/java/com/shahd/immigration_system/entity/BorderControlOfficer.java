@@ -1,4 +1,4 @@
 package com.shahd.immigration_system.entity;
 
-public class BorderControlOfficer {
+public class BorderControlOfficer extends ImmigrationOfficer {
 }
