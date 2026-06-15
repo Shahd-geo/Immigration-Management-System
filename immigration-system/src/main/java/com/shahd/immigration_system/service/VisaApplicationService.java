@@ -19,5 +19,7 @@ public class VisaApplicationService {
         Applicant applicant = applicantRepository.findById(applicantId)
                 .orElseThrow(() -> new RuntimeException("Applicant not found"));
         VisaApplication visaApplication = new VisaApplication();
+        visaApplication.setVisaType(visaType);
+        visaApplication.setApplicant(applicant);
     }
 }
