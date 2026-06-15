@@ -28,4 +28,12 @@ public class ApplicantService {
 
     public Applicant saveApplicant(String firstName, String lastName, String passportNumber, String nationality){
 
+        Applicant applicant = new Applicant();
+        applicant.setFirstName(firstName);
+        applicant.setLastName(lastName);
+        applicant.setPassportNumber(passportNumber);
+        applicant.setNationality(nationality);
+        return saveApplicant(applicant);
+    }
+
 }
