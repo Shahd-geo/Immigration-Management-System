@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 
+import java.util.Date;
+
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     @ExceptionHandler(GenericException.class)
@@ -23,5 +25,20 @@ public class GlobalExceptionHandler {
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND)
                 .body(errorResponse);
+    }
+    @ExceptionHandler(ImmigrationException.class)
+    public ResponseEntity<ErrorResponse> handleImmigrationException(
+            ImmigrationException exception,
+            WebRequest request) {
+
+        ErrorResponse errorResponse = new ErrorResponse();
+        HttpStatus status = exception.getStatus();
+        errorResponse.setStatus(status);
+        errorResponse.setStatusCode(status.value());
+        errorResponse.setError(status.getReasonPhrase());
+        errorResponse.setMessage(exception.getMessage());
+        errorResponse.setTimestamp(new Date());
+
+        return ResponseEntity.status(status).body(errorResponse);
     }
 }
