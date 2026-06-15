@@ -17,7 +17,7 @@ public class ImmigrationOfficer  extends Person{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String badgeNumber;
-    private String rank;
+    private String officerRank;
     private int clearanceLevel;
     private boolean active;
     @ManyToOne

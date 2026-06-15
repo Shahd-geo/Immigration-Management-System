@@ -2,6 +2,7 @@ package com.shahd.immigration_system.service;
 
 import com.shahd.immigration_system.entity.Applicant;
 import com.shahd.immigration_system.repository.ApplicantRepository;
+import com.shahd.immigration_system.repository.InterviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,8 @@ public class ApplicantService {
 
     @Autowired
     private ApplicantRepository applicantRepository;
+    @Autowired
+    private InterviewRepository interviewRepository;
 
     public Applicant saveApplicant(Applicant applicant){
         if(applicant.getPassportNumber() == null || applicant.getPassportNumber().isEmpty()){
@@ -27,13 +30,15 @@ public class ApplicantService {
     }
 
     public Applicant saveApplicant(String firstName, String lastName, String passportNumber, String nationality){
-
         Applicant applicant = new Applicant();
         applicant.setFirstName(firstName);
         applicant.setLastName(lastName);
         applicant.setPassportNumber(passportNumber);
         applicant.setNationality(nationality);
         return saveApplicant(applicant);
+    }
+    public Applicant flagCriminalRecord(Long applicantId){
+
     }
 
 }
