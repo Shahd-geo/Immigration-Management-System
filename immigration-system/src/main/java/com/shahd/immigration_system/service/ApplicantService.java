@@ -2,6 +2,8 @@ package com.shahd.immigration_system.service;
 
 import com.shahd.immigration_system.entity.Applicant;
 import com.shahd.immigration_system.entity.Interview;
+import com.shahd.immigration_system.exception.ErrorMessages;
+import com.shahd.immigration_system.exception.ImmigrationException;
 import com.shahd.immigration_system.repository.ApplicantRepository;
 import com.shahd.immigration_system.repository.InterviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,14 +21,14 @@ public class ApplicantService {
 
     public Applicant saveApplicant(Applicant applicant) {
         if (applicant.getPassportNumber() == null || applicant.getPassportNumber().isEmpty()) {
-            throw new RuntimeException("Passport number is required");
+            throw ImmigrationException.badRequest(ErrorMessages.PASSPORT_REQUIRED);
         }
         if (applicant.getFirstName() == null || applicant.getFirstName().isEmpty()) {
-            throw new RuntimeException("First name is required");
+            throw ImmigrationException.badRequest(ErrorMessages.FIRST_NAME_REQUIRED);
         }
 
         if (applicant.getLastName() == null || applicant.getLastName().isEmpty()) {
-            throw new RuntimeException("Last name is required");
+            throw ImmigrationException.badRequest(ErrorMessages.LAST_NAME_REQUIRED);
         }
 
         return applicantRepository.save(applicant);
@@ -43,7 +45,7 @@ public class ApplicantService {
 
     public Applicant flagCriminalRecord(Long applicantId) {
         Applicant applicant = applicantRepository.findById(applicantId).
-                orElseThrow(() -> new RuntimeException("Applicant not found"));
+                orElseThrow(() -> ImmigrationException.notFound(ErrorMessages.APPLICANT_NOT_FOUND);
                  applicant.setCriminalRecord(true);
                  applicantRepository.save(applicant);
         List<Interview> interviews = interviewRepository.findByApplicantId(applicantId);
