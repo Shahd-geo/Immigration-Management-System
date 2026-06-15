@@ -25,4 +25,7 @@ public class ApplicantService {
 
         return applicantRepository.save(applicant);
     }
+
+    public Applicant saveApplicant(String firstName, String lastName, String passportNumber, String nationality){
+
 }
