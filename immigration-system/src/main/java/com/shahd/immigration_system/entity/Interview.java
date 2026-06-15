@@ -1,9 +1,6 @@
 package com.shahd.immigration_system.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,6 +12,11 @@ import lombok.NoArgsConstructor;
 public class Interview {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @ManyToOne
+    private Applicant applicant;
+    @ManyToOne
+    private ImmigrationOfficer officer;
+
     private Long id;
     private String interviewDate;
     private String status;
