@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class BorderControlOfficer extends ImmigrationOfficer {
     private String assignedCheckpoint;
-
     private boolean k9UnitAssigned;
+
 }
