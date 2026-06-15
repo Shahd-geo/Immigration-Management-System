@@ -1,7 +1,9 @@
 package com.shahd.immigration_system.service;
 
 import com.shahd.immigration_system.entity.ImmigrationOfficer;
+import org.springframework.stereotype.Service;
 
+@Service
 public class OfficerService {
 
 
