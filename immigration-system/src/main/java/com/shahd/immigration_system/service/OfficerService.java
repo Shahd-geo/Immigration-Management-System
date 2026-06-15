@@ -24,7 +24,7 @@ public class OfficerService {
         ImmigrationOfficer officer = officerRepository.findById(officerId)
                 .orElseThrow(() -> ImmigrationException.notFound(ErrorMessages.OFFICER_NOT_FOUND));
         if (newClearanceLevel < 1 || newClearanceLevel > 5) {
-            throw new RuntimeException("Clearance level must be between 1 and 5");
+            throw ImmigrationException.badRequest(ErrorMessages.INVALID_CLEARANCE_LEVEL);
         }
         officer.setOfficerRank(newRank);
         officer.setClearanceLevel(newClearanceLevel);
