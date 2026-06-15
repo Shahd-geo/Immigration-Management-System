@@ -21,9 +21,9 @@ public class Applicant extends Person{
 
     private boolean criminalRecord;
 
-    @OneToMany(mappedBy = "applicant")
+    @OneToMany
     private List<VisaApplication> visaApplications;
 
-    @OneToMany(mappedBy = "applicant")
+    @OneToMany
     private List<Interview> interviews;
 }

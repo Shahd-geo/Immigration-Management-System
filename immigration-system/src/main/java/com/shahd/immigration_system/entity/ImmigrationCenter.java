@@ -20,6 +20,6 @@ public class ImmigrationCenter {
     private String locationCountry;
     private String type;
     private int dailyCapacity;
-    @OneToMany(mappedBy = "center")
+    @OneToMany
     private List<ImmigrationOfficer> officers;
 }

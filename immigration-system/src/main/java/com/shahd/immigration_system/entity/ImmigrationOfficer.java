@@ -23,6 +23,6 @@ public class ImmigrationOfficer  extends Person{
     @ManyToOne
     private ImmigrationCenter center;
 
-    @OneToMany(mappedBy = "officer")
+    @OneToMany
     private List<Interview> interviews;
 }
