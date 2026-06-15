@@ -35,4 +35,5 @@ public class VisaApplicationService {
         return visaApplicationRepository.save(visaApplication);
 
     }
+    public VisaApplication assignOfficer(Long visaId, Long officerId) {
 }
