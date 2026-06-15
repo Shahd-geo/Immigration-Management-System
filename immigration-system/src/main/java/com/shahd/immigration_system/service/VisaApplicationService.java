@@ -58,7 +58,7 @@ public class VisaApplicationService {
         VisaApplication visaApplication = visaApplicationRepository.findById(visaId)
                 .orElseThrow(() -> ImmigrationException.notFound(ErrorMessages.VISA_NOT_FOUND));
         if (!newStatus.equalsIgnoreCase("APPROVED") && !newStatus.equalsIgnoreCase("REJECTED")) {
-            throw new RuntimeException("Status must be APPROVED or REJECTED");
+            throw ImmigrationException.badRequest(ErrorMessages.INVALID_VISA_STATUS);
         }
         visaApplication.setStatus(newStatus);
         visaApplication.setOfficerNotes(notes);
