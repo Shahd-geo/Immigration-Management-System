@@ -39,5 +39,6 @@ public class InterviewService {
         interview.setStatus("SCHEDULED");
         return interviewRepository.save(interview);
     }
+    public Interview completeInterview(Long interviewId) {
 
 }
