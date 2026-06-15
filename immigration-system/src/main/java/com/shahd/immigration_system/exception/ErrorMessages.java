@@ -12,4 +12,5 @@ public class ErrorMessages {
     public static final String OFFICER_DOUBLE_BOOKED = "Officer is double-booked!";
     public static final String INVALID_CLEARANCE_LEVEL = "Clearance level must be between 1 and 5";
     public static final String ASYLUM_CLEARANCE_REQUIRED = "Asylum visas require clearance level 4 or 5";
+    public static final String INVALID_VISA_STATUS = "Status must be APPROVED or REJECTED";
 }
