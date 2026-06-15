@@ -7,6 +7,7 @@ import com.shahd.immigration_system.repository.OfficerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -43,6 +44,19 @@ public class OfficerService {
     }
 
     public List<ImmigrationOfficer> findOfficersByRank(String rank, int minimumClearanceLevel){
+        List<ImmigrationOfficer> officers = officerRepository.findByOfficerRank(rank);
 
+        List<ImmigrationOfficer> result = new ArrayList<>();
+
+        for (ImmigrationOfficer officer : officers) {
+
+            if (officer.getClearanceLevel() >= minimumClearanceLevel) {
+                result.add(officer);
+            }
+
+        }
+
+        return result;
     }
+
 }
