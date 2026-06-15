@@ -54,5 +54,18 @@ public class VisaApplicationService {
     }
     public VisaApplication processVisa(Long visaId, String newStatus, String notes){
 
+        VisaApplication visaApplication = visaApplicationRepository.findById(visaId)
+                .orElseThrow(() -> new RuntimeException("Visa application not found"));
+
+        if (!newStatus.equalsIgnoreCase("APPROVED") && !newStatus.equalsIgnoreCase("REJECTED")) {
+
+            throw new RuntimeException("Status must be APPROVED or REJECTED");
+        }
+        visaApplication.setStatus(newStatus);
+        visaApplication.setOfficerNotes(notes);
+
+        return visaApplicationRepository.save(visaApplication);
     }
+
+
 }
