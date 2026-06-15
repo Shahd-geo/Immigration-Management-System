@@ -23,4 +23,7 @@ public class Applicant extends Person{
 
     @OneToMany(mappedBy = "applicant")
     private List<VisaApplication> visaApplications;
+
+    @OneToMany(mappedBy = "applicant")
+    private List<Interview> interviews;
 }
