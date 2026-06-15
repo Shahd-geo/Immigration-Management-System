@@ -45,7 +45,7 @@ public class ApplicantService {
 
     public Applicant flagCriminalRecord(Long applicantId) {
         Applicant applicant = applicantRepository.findById(applicantId).
-                orElseThrow(() -> ImmigrationException.notFound(ErrorMessages.APPLICANT_NOT_FOUND);
+                orElseThrow(() -> ImmigrationException.notFound(ErrorMessages.APPLICANT_NOT_FOUND));
                  applicant.setCriminalRecord(true);
                  applicantRepository.save(applicant);
         List<Interview> interviews = interviewRepository.findByApplicantId(applicantId);
