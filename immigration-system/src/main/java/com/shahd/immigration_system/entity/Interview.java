@@ -8,5 +8,8 @@ public class Interview {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String interviewDate;
+    private String status;
+    private String purpose;
 
 }
