@@ -32,7 +32,7 @@ public class InterviewService {
         List<Interview> interviews = interviewRepository.findByOfficerIdAndInterviewDate(officerId, date);
 
         if (!interviews.isEmpty()) {
-            throw new RuntimeException("Officer is double-booked!");
+            throw ImmigrationException.badRequest(ErrorMessages.OFFICER_DOUBLE_BOOKED);
         }
         Interview interview = new Interview();
         interview.setApplicant(applicant);
