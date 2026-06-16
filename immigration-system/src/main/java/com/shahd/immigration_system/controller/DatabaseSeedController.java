@@ -25,6 +25,11 @@ public class DatabaseSeedController {
         center1.setType("Embassy");
         center1.setDailyCapacity(200);
         ImmigrationCenter center2 = new ImmigrationCenter();
+        center2.setName("Salalah Center");
+        center2.setLocationCountry("Oman");
+        center2.setType("Border");
+        center2.setDailyCapacity(100);
+
 
 
     }
