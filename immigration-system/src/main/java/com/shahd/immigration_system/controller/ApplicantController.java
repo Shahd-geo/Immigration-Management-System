@@ -16,7 +16,7 @@ public class ApplicantController {
     private ApplicantService applicantService;
 
     //POST /api/applicants
-    @PostMapping
+    @PostMapping("/add")
     public ApplicantDTO createApplicant(@RequestBody Applicant applicant) {
 
         return ApplicantDTO.convertToDTO(applicantService.saveApplicant(applicant)
@@ -36,6 +36,7 @@ public class ApplicantController {
         );
     }
     //GET /api/applicants/search?nationality=Omani
+    @GetMapping("/search")
     public List<ApplicantDTO> findByNationality(@RequestParam String nationality) {
         return ApplicantDTO.convertToDTO(applicantService.findApplicantsByNationality(nationality)
         );

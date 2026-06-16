@@ -1,5 +1,6 @@
 package com.shahd.immigration_system.service;
 
+import com.shahd.immigration_system.entity.BorderControlOfficer;
 import com.shahd.immigration_system.entity.ImmigrationCenter;
 import com.shahd.immigration_system.entity.ImmigrationOfficer;
 import com.shahd.immigration_system.exception.ErrorMessages;
@@ -18,6 +19,19 @@ public class OfficerService {
     private OfficerRepository officerRepository;
     @Autowired
     private CenterRepository centerRepository;
+
+    public ImmigrationOfficer saveOfficer(ImmigrationOfficer officer) {
+        return officerRepository.save(officer);
+    }
+
+    public BorderControlOfficer saveBorderOfficer(BorderControlOfficer officer) {
+        return officerRepository.save(officer);
+    }
+
+    public ImmigrationOfficer getOfficer(Long id) {
+        return officerRepository.findById(id)
+                .orElseThrow(() -> ImmigrationException.notFound(ErrorMessages.OFFICER_NOT_FOUND));
+    }
 
 
     public ImmigrationOfficer promoteOfficer(Long officerId, String newRank, int newClearanceLevel){
