@@ -37,4 +37,9 @@ public class OfficerController {
     public OfficerDTO promoteOfficer(@PathVariable Long id, @RequestParam String rank, @RequestParam int clearance) {
         return OfficerDTO.convertToDTO(officerService.promoteOfficer(id, rank, clearance));
     }
+    // PUT /api/officers/{id}/transfer/{centerId}
+    @PutMapping("/{id}/transfer/{centerId}")
+    public OfficerDTO transferOfficer(@PathVariable Long id, @PathVariable Long centerId) {
+        return OfficerDTO.convertToDTO(officerService.transferOfficer(id, centerId));
+    }
 }
