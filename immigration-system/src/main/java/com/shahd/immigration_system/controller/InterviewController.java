@@ -16,6 +16,12 @@ public class InterviewController {
     public InterviewDTO scheduleInterview(@PathVariable Long applicantId, @PathVariable Long officerId, @RequestParam String date) {
         return InterviewDTO.convertToDTO(interviewService.scheduleInterview(applicantId, officerId, date));
     }
+    // PUT /api/interviews/{id}/complete
+    @PutMapping("/{id}/complete")
+    public InterviewDTO completeInterview(@PathVariable Long id) {
+        return InterviewDTO.convertToDTO(interviewService.completeInterview(id));
+    }
+
 
 
 }
