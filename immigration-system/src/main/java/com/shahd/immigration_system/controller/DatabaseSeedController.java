@@ -1,5 +1,6 @@
 package com.shahd.immigration_system.controller;
 
+import com.shahd.immigration_system.entity.BorderControlOfficer;
 import com.shahd.immigration_system.entity.ImmigrationCenter;
 import com.shahd.immigration_system.entity.ImmigrationOfficer;
 import com.shahd.immigration_system.repository.ApplicantRepository;
@@ -50,6 +51,17 @@ public class DatabaseSeedController {
         officer2.setClearanceLevel(5);
         officer2.setActive(true);
         officer2.setCenter(center1);
+
+        BorderControlOfficer officer3 = new BorderControlOfficer();
+        officer3.setFirstName("Mohammed");
+        officer3.setLastName("Salim");
+        officer3.setBadgeNumber("BC001");
+        officer3.setOfficerRank("Border Officer");
+        officer3.setClearanceLevel(3);
+        officer3.setActive(true);
+        officer3.setAssignedCheckpoint("Muscat Airport");
+        officer3.setK9UnitAssigned(true);
+        officer3.setCenter(center2);
 
 
 
