@@ -14,8 +14,8 @@ public class InterviewController {
     // POST /api/interviews/schedule/{applicantId}/{officerId}?date=2025-06-16
     @PostMapping("/schedule/{applicantId}/{officerId}")
     public InterviewDTO scheduleInterview(@PathVariable Long applicantId, @PathVariable Long officerId, @RequestParam String date) {
-        return InterviewDTO.convertToDTO(interviewService.scheduleInterview(applicantId, officerId, date)
-        );
+        return InterviewDTO.convertToDTO(interviewService.scheduleInterview(applicantId, officerId, date));
     }
+
 
 }
