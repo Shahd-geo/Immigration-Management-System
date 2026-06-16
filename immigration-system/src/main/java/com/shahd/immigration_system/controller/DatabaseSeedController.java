@@ -43,6 +43,14 @@ public class DatabaseSeedController {
         officer1.setActive(true);
         officer1.setCenter(center1);
         ImmigrationOfficer officer2 = new ImmigrationOfficer();
+        officer2.setFirstName("Sara");
+        officer2.setLastName("Khalid");
+        officer2.setBadgeNumber("OF002");
+        officer2.setOfficerRank("Senior Officer");
+        officer2.setClearanceLevel(5);
+        officer2.setActive(true);
+        officer2.setCenter(center1);
+
 
 
     }
