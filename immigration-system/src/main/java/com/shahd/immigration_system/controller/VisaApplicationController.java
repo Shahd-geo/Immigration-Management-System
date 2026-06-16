@@ -23,4 +23,12 @@ public class VisaApplicationController {
         return VisaApplicationDTO.convertToDTO(visaApplicationService.assignOfficer(visaId, officerId)
         );
     }
+    // PUT /api/visas/{visaId}/process?status=APPROVED&notes=Approved
+    @PutMapping("/{visaId}/process")
+    public VisaApplicationDTO processVisa(@PathVariable Long visaId, @RequestParam String status, @RequestParam String notes) {
+
+        return VisaApplicationDTO.convertToDTO(visaApplicationService.processVisa(visaId, status, notes)
+        );
+    }
+
 }
