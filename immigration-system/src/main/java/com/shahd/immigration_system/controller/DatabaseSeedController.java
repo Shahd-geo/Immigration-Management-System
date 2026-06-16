@@ -1,9 +1,6 @@
 package com.shahd.immigration_system.controller;
 
-import com.shahd.immigration_system.entity.Applicant;
-import com.shahd.immigration_system.entity.BorderControlOfficer;
-import com.shahd.immigration_system.entity.ImmigrationCenter;
-import com.shahd.immigration_system.entity.ImmigrationOfficer;
+import com.shahd.immigration_system.entity.*;
 import com.shahd.immigration_system.repository.ApplicantRepository;
 import com.shahd.immigration_system.repository.CenterRepository;
 import com.shahd.immigration_system.repository.OfficerRepository;
@@ -88,6 +85,8 @@ public class DatabaseSeedController {
         applicant3.setPassportNumber("P33333");
         applicant3.setNationality("British");
         applicant3.setCriminalRecord(false);
+
+        AsylumSeeker applicant4 = new AsylumSeeker();
 
 
 
