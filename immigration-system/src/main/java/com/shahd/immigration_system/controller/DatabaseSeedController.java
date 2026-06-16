@@ -30,6 +30,7 @@ public class DatabaseSeedController {
         center2.setType("Border");
         center2.setDailyCapacity(100);
         centerRepository.save(center1);
+        centerRepository.save(center2);
 
 
 
