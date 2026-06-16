@@ -95,6 +95,11 @@ public class DatabaseSeedController {
         applicant4.setCountryOfOrigin("Syria");
         applicant4.setSponsorOrganization("UNHCR");
 
+        applicantRepository.save(applicant1);
+        applicantRepository.save(applicant2);
+        applicantRepository.save(applicant3);
+        applicantRepository.save(applicant4);
+
 
 
 
