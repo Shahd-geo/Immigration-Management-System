@@ -5,10 +5,9 @@ import com.shahd.immigration_system.entity.Applicant;
 import com.shahd.immigration_system.entity.AsylumSeeker;
 import com.shahd.immigration_system.service.ApplicantService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/applicants")
@@ -28,6 +27,12 @@ public class ApplicantController {
     public ApplicantDTO createAsylumSeeker(@RequestBody AsylumSeeker seeker) {
 
         return ApplicantDTO.convertToDTO(applicantService.saveApplicant(seeker)
+        );
+    }
+    //GET /api/applicants
+    @GetMapping
+    public List<ApplicantDTO> getAllApplicants() {
+        return ApplicantDTO.convertToDTO(applicantService.getAllApplicants()
         );
     }
 
