@@ -50,4 +50,15 @@ public class InterviewService {
         return interviewRepository.save(interview);
     }
 
+    public Interview cancelInterview(Long interviewId) {
+
+        Interview interview = interviewRepository.findById(interviewId)
+                .orElseThrow(() -> ImmigrationException.notFound(ErrorMessages.INTERVIEW_NOT_FOUND));
+        interview.setStatus("CANCELLED");
+        return interviewRepository.save(interview);
+    }
+    public List<Interview> getOfficerSchedule(Long officerId, String date) {
+        return interviewRepository.findByOfficerIdAndInterviewDate(officerId, date);
+    }
+
 }
