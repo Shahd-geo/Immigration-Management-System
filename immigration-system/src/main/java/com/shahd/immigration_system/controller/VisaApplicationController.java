@@ -38,5 +38,10 @@ public class VisaApplicationController {
         return VisaApplicationDTO.convertToDTO(visaApplicationService.getApplicantVisas(applicantId)
         );
     }
+    // GET /api/visas/status/{status}
+    @GetMapping("/status/{status}")
+    public List<VisaApplicationDTO> getVisasByStatus(@PathVariable String status) {
+        return VisaApplicationDTO.convertToDTO(visaApplicationService.getVisasByStatus(status));
+    }
 
 }
