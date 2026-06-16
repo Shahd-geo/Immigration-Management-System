@@ -58,6 +58,13 @@ public class ApplicantService {
 
         return applicant;
     }
+    public List<Applicant> getAllApplicants() {
+        return applicantRepository.findAll();
+    }
+
+    public List<Applicant> findApplicantsByNationality(String nationality) {
+        return applicantRepository.findByNationality(nationality);
+    }
 
 }
 
