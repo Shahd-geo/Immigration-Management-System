@@ -17,4 +17,10 @@ public class VisaApplicationController {
         return VisaApplicationDTO.convertToDTO(visaApplicationService.submitApplication(applicantId, type)
         );
     }
+    // PUT /api/visas/{visaId}/assign/{officerId}
+    @PutMapping("/{visaId}/assign/{officerId}")
+    public VisaApplicationDTO assignOfficer(@PathVariable Long visaId, @PathVariable Long officerId) {
+        return VisaApplicationDTO.convertToDTO(visaApplicationService.assignOfficer(visaId, officerId)
+        );
+    }
 }
