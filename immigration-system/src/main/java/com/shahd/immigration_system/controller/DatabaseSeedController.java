@@ -87,6 +87,14 @@ public class DatabaseSeedController {
         applicant3.setCriminalRecord(false);
 
         AsylumSeeker applicant4 = new AsylumSeeker();
+        applicant4.setFirstName("Omar");
+        applicant4.setLastName("Mahmoud");
+        applicant4.setPassportNumber("P44444");
+        applicant4.setNationality("Syrian");
+        applicant4.setCriminalRecord(false);
+        applicant4.setCountryOfOrigin("Syria");
+        applicant4.setSponsorOrganization("UNHCR");
+
 
 
 
