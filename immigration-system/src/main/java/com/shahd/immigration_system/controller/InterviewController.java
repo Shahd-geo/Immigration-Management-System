@@ -21,6 +21,11 @@ public class InterviewController {
     public InterviewDTO completeInterview(@PathVariable Long id) {
         return InterviewDTO.convertToDTO(interviewService.completeInterview(id));
     }
+    // PUT /api/interviews/{id}/cancel
+    @PutMapping("/{id}/cancel")
+    public InterviewDTO cancelInterview(@PathVariable Long id) {
+        return InterviewDTO.convertToDTO(interviewService.cancelInterview(id));
+    }
 
 
 
