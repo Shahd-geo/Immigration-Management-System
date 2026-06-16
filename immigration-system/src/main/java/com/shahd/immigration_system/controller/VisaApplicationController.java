@@ -5,6 +5,8 @@ import com.shahd.immigration_system.service.VisaApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/visas")
 public class VisaApplicationController {
@@ -28,6 +30,12 @@ public class VisaApplicationController {
     public VisaApplicationDTO processVisa(@PathVariable Long visaId, @RequestParam String status, @RequestParam String notes) {
 
         return VisaApplicationDTO.convertToDTO(visaApplicationService.processVisa(visaId, status, notes)
+        );
+    }
+    // GET /api/visas/applicant/{applicantId}
+    @GetMapping("/applicant/{applicantId}")
+    public List<VisaApplicationDTO> getApplicantVisas(@PathVariable Long applicantId) {
+        return VisaApplicationDTO.convertToDTO(visaApplicationService.getApplicantVisas(applicantId)
         );
     }
 
