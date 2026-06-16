@@ -5,10 +5,7 @@ import com.shahd.immigration_system.entity.BorderControlOfficer;
 import com.shahd.immigration_system.entity.ImmigrationOfficer;
 import com.shahd.immigration_system.service.OfficerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/officers")
@@ -28,5 +25,11 @@ public class OfficerController {
 
         return OfficerDTO.convertToDTO(officerService.saveBorderOfficer(officer)
         );
+    }
+    // GET /api/officers/{id}
+    @GetMapping("/{id}")
+    public OfficerDTO getOfficer(@PathVariable Long id) {
+
+        return OfficerDTO.convertToDTO(officerService.getOfficer(id));
     }
 }
