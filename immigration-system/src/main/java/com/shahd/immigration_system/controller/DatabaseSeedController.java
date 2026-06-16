@@ -1,5 +1,6 @@
 package com.shahd.immigration_system.controller;
 
+import com.shahd.immigration_system.entity.Applicant;
 import com.shahd.immigration_system.entity.BorderControlOfficer;
 import com.shahd.immigration_system.entity.ImmigrationCenter;
 import com.shahd.immigration_system.entity.ImmigrationOfficer;
@@ -65,6 +66,9 @@ public class DatabaseSeedController {
         officerRepository.save(officer1);
         officerRepository.save(officer2);
         officerRepository.save(officer3);
+
+        // Applicants
+        Applicant applicant1 = new Applicant();
 
 
 
