@@ -35,8 +35,7 @@ public class ApplicantController {
         return ApplicantDTO.convertToDTO(applicantService.getAllApplicants()
         );
     }
-    //GET /api/applicants/search//nationality
-    @GetMapping("/search")
+    //GET /api/applicants/search?nationality=Omani
     public List<ApplicantDTO> findByNationality(@RequestParam String nationality) {
         return ApplicantDTO.convertToDTO(applicantService.findApplicantsByNationality(nationality)
         );
