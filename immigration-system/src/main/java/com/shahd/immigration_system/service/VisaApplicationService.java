@@ -11,6 +11,8 @@ import com.shahd.immigration_system.repository.VisaApplicationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class VisaApplicationService {
     @Autowired
@@ -64,6 +66,17 @@ public class VisaApplicationService {
         visaApplication.setOfficerNotes(notes);
 
         return visaApplicationRepository.save(visaApplication);
+    }
+
+    //
+    public List<VisaApplication> getApplicantVisas(Long applicantId) {
+
+        applicantRepository.findById(applicantId)
+                .orElseThrow(() -> ImmigrationException.notFound(ErrorMessages.APPLICANT_NOT_FOUND));
+        return visaApplicationRepository.findByApplicantId(applicantId);
+    }
+    public List<VisaApplication> getVisasByStatus(String status) {
+        return visaApplicationRepository.findByStatus(status);
     }
 
 
