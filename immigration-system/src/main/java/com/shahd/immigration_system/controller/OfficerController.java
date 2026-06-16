@@ -14,7 +14,7 @@ public class OfficerController {
     private OfficerService officerService;
 
     // POST /api/officers
-    @PostMapping ("/add ")
+    @PostMapping ("/add")
     public OfficerDTO createOfficer(@RequestBody ImmigrationOfficer officer) {
         return OfficerDTO.convertToDTO(officerService.saveOfficer(officer)
         );
