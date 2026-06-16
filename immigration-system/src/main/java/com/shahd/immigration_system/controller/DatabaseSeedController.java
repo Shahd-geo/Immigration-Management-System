@@ -69,6 +69,12 @@ public class DatabaseSeedController {
 
         // Applicants
         Applicant applicant1 = new Applicant();
+        applicant1.setFirstName("Ali");
+        applicant1.setLastName("Hassan");
+        applicant1.setPassportNumber("P11111");
+        applicant1.setNationality("Omani");
+        applicant1.setCriminalRecord(false);
+
 
 
 
