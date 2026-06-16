@@ -1,5 +1,6 @@
 package com.shahd.immigration_system.controller;
 
+import com.shahd.immigration_system.repository.ApplicantRepository;
 import com.shahd.immigration_system.repository.CenterRepository;
 import com.shahd.immigration_system.repository.OfficerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ public class DatabaseSeedController {
     private CenterRepository centerRepository;
     @Autowired
     private OfficerRepository officerRepository;
+    @Autowired
+    private ApplicantRepository applicantRepository;
 
 
 }
