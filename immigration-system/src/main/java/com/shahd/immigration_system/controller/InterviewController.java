@@ -31,6 +31,8 @@ public class InterviewController {
     // GET /api/interviews/officer/{officerId}/date/{date}
     @GetMapping("/officer/{officerId}/date/{date}")
     public List<InterviewDTO> getOfficerSchedule(@PathVariable Long officerId, @PathVariable String date) {
+        return InterviewDTO.convertToDTO(interviewService.getOfficerSchedule(officerId, date));
+    }
 
 
 
