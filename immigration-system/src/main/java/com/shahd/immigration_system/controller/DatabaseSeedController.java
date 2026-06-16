@@ -1,6 +1,7 @@
 package com.shahd.immigration_system.controller;
 
 import com.shahd.immigration_system.entity.ImmigrationCenter;
+import com.shahd.immigration_system.entity.ImmigrationOfficer;
 import com.shahd.immigration_system.repository.ApplicantRepository;
 import com.shahd.immigration_system.repository.CenterRepository;
 import com.shahd.immigration_system.repository.OfficerRepository;
@@ -31,6 +32,9 @@ public class DatabaseSeedController {
         center2.setDailyCapacity(100);
         centerRepository.save(center1);
         centerRepository.save(center2);
+
+        // Officers
+        ImmigrationOfficer officer1 = new ImmigrationOfficer();
 
 
 
