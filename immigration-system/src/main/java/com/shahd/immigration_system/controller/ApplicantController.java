@@ -35,5 +35,11 @@ public class ApplicantController {
         return ApplicantDTO.convertToDTO(applicantService.getAllApplicants()
         );
     }
+    //GET /api/applicants/search//nationality
+    @GetMapping("/search")
+    public List<ApplicantDTO> findByNationality(@RequestParam String nationality) {
+        return ApplicantDTO.convertToDTO(applicantService.findApplicantsByNationality(nationality)
+        );
+    }
 
 }
