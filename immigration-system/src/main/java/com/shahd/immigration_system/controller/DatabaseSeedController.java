@@ -42,6 +42,7 @@ public class DatabaseSeedController {
         officer1.setClearanceLevel(2);
         officer1.setActive(true);
         officer1.setCenter(center1);
+        ImmigrationOfficer officer2 = new ImmigrationOfficer();
 
 
     }
