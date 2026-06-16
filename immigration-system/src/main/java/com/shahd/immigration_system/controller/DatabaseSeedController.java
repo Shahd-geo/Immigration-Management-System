@@ -16,6 +16,7 @@ public class DatabaseSeedController {
     @Autowired
     private ApplicantRepository applicantRepository;
     @PostMapping("/api/seed")
+    public String seedDatabase() {
 
 
 }
