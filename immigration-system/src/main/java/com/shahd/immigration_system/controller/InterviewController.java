@@ -5,6 +5,8 @@ import com.shahd.immigration_system.service.InterviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/interviews")
 public class InterviewController {
@@ -26,6 +28,9 @@ public class InterviewController {
     public InterviewDTO cancelInterview(@PathVariable Long id) {
         return InterviewDTO.convertToDTO(interviewService.cancelInterview(id));
     }
+    // GET /api/interviews/officer/{officerId}/date/{date}
+    @GetMapping("/officer/{officerId}/date/{date}")
+    public List<InterviewDTO> getOfficerSchedule(@PathVariable Long officerId, @PathVariable String date) {
 
 
 
