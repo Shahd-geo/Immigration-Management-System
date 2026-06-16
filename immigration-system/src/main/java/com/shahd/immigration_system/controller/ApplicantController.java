@@ -41,5 +41,10 @@ public class ApplicantController {
         return ApplicantDTO.convertToDTO(applicantService.findApplicantsByNationality(nationality)
         );
     }
+    //PUT /api/applicants/{id}/flag
+    @PutMapping("/{id}/flag")
+    public ApplicantDTO flagApplicant(@PathVariable Long id) {
+        return ApplicantDTO.convertToDTO(applicantService.flagCriminalRecord(id));
+    }
 
 }
