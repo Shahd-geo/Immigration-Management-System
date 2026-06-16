@@ -71,6 +71,9 @@ public class DatabaseSeedController {
         applicant1.setPassportNumber("P11111");
         applicant1.setNationality("Omani");
         applicant1.setCriminalRecord(false);
+        applicant1.setGender("Male");
+        applicant1.setPhoneNumber("91234567");
+        applicant1.setEmail("ali@test.com");
 
         Applicant applicant2 = new Applicant();
         applicant2.setFirstName("Fatma");
@@ -78,6 +81,9 @@ public class DatabaseSeedController {
         applicant2.setPassportNumber("P22222");
         applicant2.setNationality("Omani");
         applicant2.setCriminalRecord(true);
+        applicant2.setGender("female");
+        applicant2.setPhoneNumber("91234900");
+        applicant2.setEmail("Fatma@test.com");
 
         Applicant applicant3 = new Applicant();
         applicant3.setFirstName("John");
@@ -85,6 +91,10 @@ public class DatabaseSeedController {
         applicant3.setPassportNumber("P33333");
         applicant3.setNationality("British");
         applicant3.setCriminalRecord(false);
+        applicant3.setGender("Male");
+        applicant3.setPhoneNumber("91554900");
+        applicant3.setEmail("John@test.com");
+
 
         AsylumSeeker applicant4 = new AsylumSeeker();
         applicant4.setFirstName("Omar");
@@ -94,6 +104,9 @@ public class DatabaseSeedController {
         applicant4.setCriminalRecord(false);
         applicant4.setCountryOfOrigin("Syria");
         applicant4.setSponsorOrganization("UNHCR");
+        applicant3.setGender("Male");
+        applicant3.setPhoneNumber("95454900");
+        applicant3.setEmail("Omar@test.com");
 
         applicantRepository.save(applicant1);
         applicantRepository.save(applicant2);
