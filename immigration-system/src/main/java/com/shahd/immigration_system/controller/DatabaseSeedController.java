@@ -20,6 +20,11 @@ public class DatabaseSeedController {
     public String seedDatabase() {
         // Centers
         ImmigrationCenter center1 = new ImmigrationCenter();
+        center1.setName("Muscat Center");
+        center1.setLocationCountry("Oman");
+        center1.setType("Embassy");
+        center1.setDailyCapacity(200);
+
     }
 
 
