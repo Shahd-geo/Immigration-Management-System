@@ -62,6 +62,9 @@ public class DatabaseSeedController {
         officer3.setAssignedCheckpoint("Muscat Airport");
         officer3.setK9UnitAssigned(true);
         officer3.setCenter(center2);
+        officerRepository.save(officer1);
+        officerRepository.save(officer2);
+        officerRepository.save(officer3);
 
 
 
