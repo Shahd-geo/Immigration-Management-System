@@ -24,7 +24,7 @@ public class InterviewService {
     @Autowired
     private OfficerRepository officerRepository;
 
-    public Interview scheduleInterview(Long applicantId, Long officerId, String date) {
+    public Interview scheduleInterview(Long applicantId, Long officerId, String date, String purpose) {
         Applicant applicant = applicantRepository.findById(applicantId)
                 .orElseThrow(() ->  ImmigrationException.notFound(ErrorMessages.APPLICANT_NOT_FOUND));
         ImmigrationOfficer officer = officerRepository.findById(officerId)
@@ -39,6 +39,7 @@ public class InterviewService {
         interview.setOfficer(officer);
         interview.setInterviewDate(date);
         interview.setStatus("SCHEDULED");
+        interview.setPurpose(purpose);
         return interviewRepository.save(interview);
     }
 
