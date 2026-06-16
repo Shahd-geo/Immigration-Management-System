@@ -35,7 +35,13 @@ public class DatabaseSeedController {
 
         // Officers
         ImmigrationOfficer officer1 = new ImmigrationOfficer();
-
+        officer1.setFirstName("Ahmed");
+        officer1.setLastName("Ali");
+        officer1.setBadgeNumber("OF001");
+        officer1.setOfficerRank("Junior Officer");
+        officer1.setClearanceLevel(2);
+        officer1.setActive(true);
+        officer1.setCenter(center1);
 
 
     }
