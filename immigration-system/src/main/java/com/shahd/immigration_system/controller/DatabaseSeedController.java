@@ -100,12 +100,7 @@ public class DatabaseSeedController {
         applicantRepository.save(applicant3);
         applicantRepository.save(applicant4);
 
-
-
-
-
-
+        return "Database seeded successfully!";
     }
-
 
 }
