@@ -15,6 +15,7 @@ public class DatabaseSeedController {
     private OfficerRepository officerRepository;
     @Autowired
     private ApplicantRepository applicantRepository;
+    @PostMapping("/api/seed")
 
 
 }
