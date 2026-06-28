@@ -1,4 +1,4 @@
-package com.shahd.immigration_system.exception;
+package com.shahd.immigration_system.Exception;
 
 public class ErrorMessages {
     public static final String APPLICANT_NOT_FOUND = "Applicant not found";

@@ -1,9 +1,9 @@
-package com.shahd.immigration_system.service;
+package com.shahd.immigration_system.Service;
 
-import com.shahd.immigration_system.entity.ImmigrationCenter;
-import com.shahd.immigration_system.exception.ErrorMessages;
-import com.shahd.immigration_system.exception.ImmigrationException;
-import com.shahd.immigration_system.repository.CenterRepository;
+import com.shahd.immigration_system.Entity.ImmigrationCenter;
+import com.shahd.immigration_system.Exception.ErrorMessages;
+import com.shahd.immigration_system.Exception.ImmigrationException;
+import com.shahd.immigration_system.Repository.CenterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

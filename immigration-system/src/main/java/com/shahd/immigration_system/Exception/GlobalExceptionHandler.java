@@ -1,4 +1,4 @@
-package com.shahd.immigration_system.exception;
+package com.shahd.immigration_system.Exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

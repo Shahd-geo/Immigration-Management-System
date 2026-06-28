@@ -1,5 +1,5 @@
-package com.shahd.immigration_system.dto;
-import com.shahd.immigration_system.entity.Applicant;
+package com.shahd.immigration_system.Dto;
+import com.shahd.immigration_system.Entity.Applicant;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

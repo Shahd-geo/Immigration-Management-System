@@ -1,8 +1,8 @@
 package com.shahd.immigration_system.Controller;
 
-import com.shahd.immigration_system.dto.CenterDTO;
-import com.shahd.immigration_system.entity.ImmigrationCenter;
-import com.shahd.immigration_system.service.CenterService;
+import com.shahd.immigration_system.Dto.CenterDTO;
+import com.shahd.immigration_system.Entity.ImmigrationCenter;
+import com.shahd.immigration_system.Service.CenterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

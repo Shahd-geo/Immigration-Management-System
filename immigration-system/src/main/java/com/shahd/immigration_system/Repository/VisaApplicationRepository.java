@@ -1,6 +1,6 @@
-package com.shahd.immigration_system.repository;
+package com.shahd.immigration_system.Repository;
 
-import com.shahd.immigration_system.entity.VisaApplication;
+import com.shahd.immigration_system.Entity.VisaApplication;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

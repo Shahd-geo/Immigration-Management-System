@@ -1,9 +1,9 @@
 package com.shahd.immigration_system.Controller;
 
-import com.shahd.immigration_system.entity.*;
-import com.shahd.immigration_system.repository.ApplicantRepository;
-import com.shahd.immigration_system.repository.CenterRepository;
-import com.shahd.immigration_system.repository.OfficerRepository;
+import com.shahd.immigration_system.Entity.*;
+import com.shahd.immigration_system.Repository.ApplicantRepository;
+import com.shahd.immigration_system.Repository.CenterRepository;
+import com.shahd.immigration_system.Repository.OfficerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;

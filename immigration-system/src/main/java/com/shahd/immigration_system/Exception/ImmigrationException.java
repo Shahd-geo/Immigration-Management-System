@@ -1,4 +1,4 @@
-package com.shahd.immigration_system.exception;
+package com.shahd.immigration_system.Exception;
 import org.springframework.http.HttpStatus;
 
 public class ImmigrationException extends RuntimeException {

@@ -1,5 +1,5 @@
-package com.shahd.immigration_system.dto;
-import com.shahd.immigration_system.entity.ImmigrationOfficer;
+package com.shahd.immigration_system.Dto;
+import com.shahd.immigration_system.Entity.ImmigrationOfficer;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.ArrayList;

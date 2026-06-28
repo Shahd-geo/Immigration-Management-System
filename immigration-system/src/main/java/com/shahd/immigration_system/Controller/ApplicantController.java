@@ -1,9 +1,9 @@
 package com.shahd.immigration_system.Controller;
 
-import com.shahd.immigration_system.dto.ApplicantDTO;
-import com.shahd.immigration_system.entity.Applicant;
-import com.shahd.immigration_system.entity.AsylumSeeker;
-import com.shahd.immigration_system.service.ApplicantService;
+import com.shahd.immigration_system.Dto.ApplicantDTO;
+import com.shahd.immigration_system.Entity.Applicant;
+import com.shahd.immigration_system.Entity.AsylumSeeker;
+import com.shahd.immigration_system.Service.ApplicantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

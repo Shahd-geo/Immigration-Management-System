@@ -1,4 +1,4 @@
-package com.shahd.immigration_system.entity;
+package com.shahd.immigration_system.Entity;
 
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;

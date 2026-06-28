@@ -1,4 +1,4 @@
-package com.shahd.immigration_system.exception;
+package com.shahd.immigration_system.Exception;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
