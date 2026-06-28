@@ -1,4 +1,4 @@
-package com.shahd.immigration_system.controller;
+package com.shahd.immigration_system.Controller;
 
 import com.shahd.immigration_system.dto.ApplicantDTO;
 import com.shahd.immigration_system.entity.Applicant;

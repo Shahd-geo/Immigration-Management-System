@@ -1,4 +1,4 @@
-package com.shahd.immigration_system.controller;
+package com.shahd.immigration_system.Controller;
 
 import com.shahd.immigration_system.dto.CenterDTO;
 import com.shahd.immigration_system.entity.ImmigrationCenter;

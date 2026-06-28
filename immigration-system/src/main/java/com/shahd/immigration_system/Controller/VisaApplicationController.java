@@ -1,4 +1,4 @@
-package com.shahd.immigration_system.controller;
+package com.shahd.immigration_system.Controller;
 
 import com.shahd.immigration_system.dto.VisaApplicationDTO;
 import com.shahd.immigration_system.service.VisaApplicationService;

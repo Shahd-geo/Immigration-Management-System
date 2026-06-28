@@ -1,4 +1,4 @@
-package com.shahd.immigration_system.controller;
+package com.shahd.immigration_system.Controller;
 
 import com.shahd.immigration_system.entity.*;
 import com.shahd.immigration_system.repository.ApplicantRepository;

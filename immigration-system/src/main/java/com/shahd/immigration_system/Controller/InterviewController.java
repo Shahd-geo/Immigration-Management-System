@@ -1,4 +1,4 @@
-package com.shahd.immigration_system.controller;
+package com.shahd.immigration_system.Controller;
 
 import com.shahd.immigration_system.dto.InterviewDTO;
 import com.shahd.immigration_system.service.InterviewService;
